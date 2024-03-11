@@ -58,10 +58,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        saveText();
     }
 
-
+    @Override
+    protected void onStop() {
+        super.onStop();
+        saveText();
+    }
 
     SharedPreferences sPref;
     final String keyName = "#key";

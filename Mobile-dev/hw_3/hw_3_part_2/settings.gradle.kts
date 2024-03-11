@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "hw_3_part_2"
+rootProject.name = "My Application"
 include(":app")
  
