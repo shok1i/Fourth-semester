@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         saveText();
     }
 
+
+
     SharedPreferences sPref;
     final String keyName = "#key";
 
