@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">(5)</string>
+    <string name="hello">Hello World!</string>
+    <string-array name="names">
+        <item>Анна</item>
+        <item>Максим</item>
+        <item>Елена</item>
+        <item>Александр</item>
+        <item>Дарья</item>
+        <item>Иван</item>
+        <item>Ольга</item>
+        <item>Никита</item>
+        <item>Мария</item>
+        <item>Денис</item>
+        <item>София</item>
+    </string-array>
+</resources>
+
