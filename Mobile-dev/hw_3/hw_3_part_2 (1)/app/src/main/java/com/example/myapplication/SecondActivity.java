@@ -27,9 +27,11 @@ public class SecondActivity extends AppCompatActivity {
     public void goToThird (View view) {
         String BIO = getIntent().getStringExtra("BIO"), TEL = getIntent().getStringExtra("TEL");
         Intent intent = new Intent(this, ThirdActivity.class);
-        String pointFrom = binding.fromStreet.getText().toString() + binding.fromHouse.getText().toString() + " " + binding.fromFlat.getText().toString();
-        String pointTo   = binding.toStreet.getText().toString() + binding.toHouse.getText().toString() + " " + binding.toFlat.getText().toString();
-        intent.putExtra("ADDRESS", "From: " + pointFrom + "\nTo: " + pointTo);
+        String pointFrom = binding.fromStreet.getText().toString() + " " + binding.fromHouse.getText().toString() + " " + binding.fromFlat.getText().toString();
+        String pointTo   = binding.toStreet.getText().toString() + " " + binding.toHouse.getText().toString() + " " + binding.toFlat.getText().toString();
+        if (!pointTo.equals("  ") | !pointFrom.equals("  ")) {
+            intent.putExtra("ADDRESS", "From: " + pointFrom + "\nTo: " + pointTo);
+        }
         intent.putExtra("BIO", BIO);
         intent.putExtra("TEL", TEL);
         startActivity(intent);
