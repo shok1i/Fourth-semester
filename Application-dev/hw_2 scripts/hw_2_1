@@ -1,0 +1,17 @@
+#!/bin/bash
+# Variables
+var_date=$(date +"%Y-%m-%d")
+var_time=$(date +"%T")
+var_users=$(cat /etc/passwd | grep /bin/bash | cut -d: -f1)
+var_sys_time=$(uptime)
+output_file="info.txt"
+# Into file
+echo "Date: $var_date" > $output_file
+echo "Time: $var_time" >> $output_file
+echo "Users: $var_users" >> $output_file
+echo "Uptime: $var_sys_time" >> $output_file
+# Outo file
+cat info.txt
+
+
+

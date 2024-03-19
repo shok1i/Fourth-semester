@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "Directory:"
+read path
+
+if [ -e $path ]; then
+	if [ -d $path ]; then
+		echo "It's directory. Files: "
+		ls  -la $path
+	else
+		echo "It's file"
+		fi
+else
+	echo "Error"
+	fi

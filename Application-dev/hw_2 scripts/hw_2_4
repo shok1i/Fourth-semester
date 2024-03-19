@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "Path:"
+read path
+
+echo "Files:"
+for elem in $path/*; do
+	if [ -f $elem ]; then
+		echo "$elem is a file"
+	elif [ -d $elem ]; then
+		echo "$elem is a directory"
+	fi
+done
+

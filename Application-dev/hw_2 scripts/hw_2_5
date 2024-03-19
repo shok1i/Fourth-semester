@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Path"
+read path
+sz=$(du -s $path | cut -f1)
+echo "Size $sz KB"

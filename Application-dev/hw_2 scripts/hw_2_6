@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "Path:"
+read path
+echo "Files:"
+for elem in $path/*; do
+	if [ -x "$elem" ]; then
+		echo "$elem"
+	fi
+done
