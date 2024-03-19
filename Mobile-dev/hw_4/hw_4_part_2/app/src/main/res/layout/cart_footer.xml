@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/dark"
+        android:textSize="24sp">
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/horLay"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="16dp"
+        android:layout_height="49dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:backgroundTint="@color/medium"
+            android:text="Back"
+            android:textColor="@color/light"
+            android:layout_marginRight="25dp"
+            app:cornerRadius="5dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:backgroundTint="@color/medium"
+            android:text="Buy"
+            android:textColor="@color/light"
+            android:layout_marginRight="25dp"
+            app:cornerRadius="5dp" />
+    </LinearLayout>
+</LinearLayout>
