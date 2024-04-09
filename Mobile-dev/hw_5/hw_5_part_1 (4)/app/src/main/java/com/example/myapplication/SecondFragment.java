@@ -21,7 +21,6 @@ public class SecondFragment extends Fragment {
         public void someEvent(String s);
     }
     onSomeEventListener someEventListener;
-
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -31,33 +30,26 @@ public class SecondFragment extends Fragment {
             throw new ClassCastException(context.toString() + " must implement on-SomeEventListener");
         }
     }
-
     final String LOG_TAG = "myLog";
     FragmentSecondBinding binding;
-
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentSecondBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-
         binding.btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d (LOG_TAG, "Button click in Fragment2");
             }
         });
-
-
         // POINT 1.2
         binding.btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //  Log.d (LOG_TAG, "Button click in Fragment2");
+                Log.d (LOG_TAG, "Button click in Fragment2");
                 someEventListener.someEvent("Test text to Fragment1");
             }
         });
-
         return view;
     }
 }

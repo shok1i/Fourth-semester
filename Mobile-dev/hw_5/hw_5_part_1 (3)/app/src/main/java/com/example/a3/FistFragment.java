@@ -21,3 +21,4 @@ public class FistFragment extends Fragment {
         return binding.getRoot();
     }
 }
+

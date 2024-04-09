@@ -18,9 +18,8 @@ public class FirstFragment extends Fragment {
     final String LOG_TAG = "myLog";
     FragmentFirstBinding binding;
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentFirstBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
@@ -37,3 +36,4 @@ public class FirstFragment extends Fragment {
         return view;
     }
 }
+

@@ -19,12 +19,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:name="com.example.myapplication.FirstFragment"
         tools:layout="@layout/fragment_first" />
     
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:name="com.example.myapplication.SecondFragment"
+        tools:layout="@layout/fragment_second" />
 
 </LinearLayout>
