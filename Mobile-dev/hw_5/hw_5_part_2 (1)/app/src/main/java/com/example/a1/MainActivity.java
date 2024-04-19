@@ -2,49 +2,45 @@ package com.example.a1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 
 import com.example.a1.databinding.ActivityMainBinding;
-import com.google.android.material.button.MaterialButton;
+import com.example.a1.onBtnClick;
 
-public class MainActivity extends AppCompatActivity {
-    ActivityMainBinding binding;
+public class MainActivity extends AppCompatActivity implements onBtnClick {
 
+    private ActivityMainBinding _binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
+        _binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(_binding.getRoot());
     }
 
-    public void changBase (View view) {
-        MaterialButton btn = (MaterialButton) view;
-        String btnText = btn.getText().toString();
-        binding.solutionBase.setText(btnText);
+    @Override
+    public void ChangeBaseOnActivity(String text) {
+        _binding.solutionBase.setText(text);
     }
 
-    public void addSymbol (View view) {
-        MaterialButton btn = (MaterialButton) view;
-        String btnText = btn.getText().toString();
-        binding.solution.append(btnText);
+    @Override
+    public void ChangeSolutionOnActivity(String text) {
+        _binding.solutionOnActivity.append(text);
     }
 
-    public void clear (View view) {
-        binding.solution.setText("");
+    @Override
+    public void ClearSolutionOnActivity(String text) {
+        _binding.solutionOnActivity.setText("");
     }
 
-    public void getResult (View view) {
-        int from = Integer.parseInt(binding.solutionBase.getText().toString());
-        binding.res2.setText(converter(binding.solution.toString(),  from, 2 ));
-        binding.res8.setText(converter(binding.solution.toString(),  from, 8 ));
-        binding.res10.setText(converter(binding.solution.toString(), from, 10));
-        binding.res16.setText(converter(binding.solution.toString(), from, 16));
+    @Override
+    public void TransportResultToActivity(String text) {
+        int from = Integer.parseInt(_binding.solutionBase.getText().toString());
+        _binding.res2.setText(converter(_binding.solutionOnActivity.getText().toString(),  from, 2 ));
+        _binding.res8.setText(converter(_binding.solutionOnActivity.getText().toString(),  from, 8 ));
+        _binding.res10.setText(converter(_binding.solutionOnActivity.getText().toString(), from, 10));
+        _binding.res16.setText(converter(_binding.solutionOnActivity.getText().toString(), from, 16));
     }
 
     private String converter(String number, int input_base, int out_base) {
@@ -101,4 +97,5 @@ public class MainActivity extends AppCompatActivity {
 
         return integer_result;
     }
+
 }

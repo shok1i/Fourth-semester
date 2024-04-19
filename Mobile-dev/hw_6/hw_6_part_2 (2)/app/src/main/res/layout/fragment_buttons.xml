@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Buttons">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="24dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <!--  SOLUTION      -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="64dp">
+
+            <TextView
+                android:id="@+id/solutionBase"
+                android:layout_width="16dp"
+                android:layout_height="match_parent"
+                android:text="10"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/solution"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textAlignment="textEnd"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <!--  CHANGE BASE   -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="12dp">
+
+            <Button
+                android:id="@+id/changeBase2"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/changeBase8"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="8"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/changeBase10"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/changeBase16"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="16"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+        </LinearLayout>
+        <!--  SYMBOLS       -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="8dp">
+
+            <Button
+                android:id="@+id/addSymbol_C"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="C"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/addSymbol_D"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="D"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/addSymbol_E"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="E"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/addSymbol_F"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="F"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="8dp"
+            android:onClick="addSymbol">
+
+            <Button
+                android:id="@+id/addSymbol_8"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="8"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/addSymbol_9"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="9"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/addSymbol_A"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="A"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/addSymbol_B"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="B"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="8dp"
+            android:onClick="addSymbol">
+
+            <Button
+                android:id="@+id/addSymbol_4"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/addSymbol_5"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/addSymbol_6"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/addSymbol_7"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="7"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="8dp"
+            android:onClick="addSymbol">
+
+            <Button
+                android:id="@+id/addSymbol_0"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/addSymbol_1"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/addSymbol_2"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/addSymbol_3"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="8dp"
+            android:onClick="addSymbol">
+
+            <Button
+                android:id="@+id/clear_text"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="AC"
+                android:onClick="clear"
+                android:textSize="11sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/addSymbol_point"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="."
+                android:onClick="addSymbol"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/result"
+
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="="
+                android:onClick="getResult"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="8dp"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

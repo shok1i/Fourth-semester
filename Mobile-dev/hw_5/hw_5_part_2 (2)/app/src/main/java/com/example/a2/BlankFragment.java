@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,27 +28,33 @@ public class BlankFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
         binding = FragmentBlankBinding.inflate(getLayoutInflater());
         View temp = binding.getRoot();
         super.onViewCreated(temp, savedInstanceState);
 
+        Log.d("myLogs", "Checkout position");
     }
 
     public void changBase (View view) {
         MaterialButton btn = (MaterialButton) view;
         String btnText = btn.getText().toString();
         binding.solutionBase.setText(btnText);
+
+        Log.d("myLogs", "Checkout position || changBase");
     }
 
     public void addSymbol (View view) {
         MaterialButton btn = (MaterialButton) view;
         String btnText = btn.getText().toString();
         binding.solution.append(btnText);
+
+        Log.d("myLogs", "Checkout position || addSymbol");
     }
 
     public void clear (View view) {
         binding.solution.setText("");
+
+        Log.d("myLogs", "Checkout position || clear");
     }
 
     public void getResult (View view) {
