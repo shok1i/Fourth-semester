@@ -13,13 +13,11 @@ import androidx.fragment.app.DialogFragment;
 public class CustomDialogFragment extends DialogFragment {
     // 7 lines
     private Removable _removable;
-
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         _removable = (Removable) context;
     }
-
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {

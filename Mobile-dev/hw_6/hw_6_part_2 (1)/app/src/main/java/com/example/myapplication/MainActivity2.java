@@ -49,12 +49,13 @@ public class MainActivity2 extends AppCompatActivity {
         }
 
         if (id == R.id.action_about) {
-            Toast.makeText(this, "О программе", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,
+                    "Перевод из одних систем счисления в другие", Toast.LENGTH_SHORT).show();
             return true;
         }
 
         if (id == R.id.action_author) {
-            Toast.makeText(this, "Об авторе", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ИКБО-33-22 Шило Юрий", Toast.LENGTH_SHORT).show();
             return true;
         }
 

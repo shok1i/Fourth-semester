@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_about) {
-            Toast.makeText(this, "Перевод из одних систем счисления в другие", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,
+                    "Перевод из одних систем счисления в другие", Toast.LENGTH_SHORT).show();
             return true;
         }
 

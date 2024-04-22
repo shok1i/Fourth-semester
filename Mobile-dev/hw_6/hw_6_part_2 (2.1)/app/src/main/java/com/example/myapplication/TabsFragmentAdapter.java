@@ -37,3 +37,4 @@ public class TabsFragmentAdapter extends FragmentPagerAdapter{
         return fragmentTitles.get(position);
     }
 }
+

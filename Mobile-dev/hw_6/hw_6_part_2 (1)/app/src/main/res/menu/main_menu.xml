@@ -12,3 +12,4 @@
         android:title="Об авторе"
         app:showAsAction="ifRoom"/>
 </menu>
+

@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR | DateUtils.FORMAT_SHOW_TIME)
         );
     }
-
     TimePickerDialog.OnTimeSetListener t = new TimePickerDialog.OnTimeSetListener() {
         @Override
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -47,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             setInitialDateTime();
         }
     };
-
     DatePickerDialog.OnDateSetListener d = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -57,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
             setInitialDateTime();
         }
     };
-
     public void setDate(View view) {
         new DatePickerDialog(MainActivity.this, d,
                 dateAndTime.get(Calendar.YEAR),
@@ -65,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
                 dateAndTime.get(Calendar.DAY_OF_MONTH)
         ).show();
     }
-
     public void setTime(View view) {
         new TimePickerDialog(MainActivity.this, t,
                 dateAndTime.get(Calendar.HOUR_OF_DAY),

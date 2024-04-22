@@ -24,6 +24,8 @@ public class CustomDialogFragment extends DialogFragment {
     // POINT 3.2
     // Кастомизируем диалоговое окно, для этого отредактируйте код метода onCreateDialog() в
     // классе фрагмента
+
+
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
