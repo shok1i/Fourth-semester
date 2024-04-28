@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--  Logo image background  -->
+    <color name="ic_launcher_background">#B8EDFF</color>
+<!--  Project colors  -->
+    <color name="black">#1E1E1E</color>
+    <color name="red">#FE0000</color>
+    <color name="blue">#3CACD2</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#E5E9EB</color>
+</resources>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/company_logo"
+        android:layout_width="match_parent"
+        android:layout_height="105sp"
+        android:layout_marginHorizontal="72sp"
+        android:layout_marginTop="260dp"
+        android:src="@drawable/company_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/LogIn_Email"
+        style="@style/Highlighting_text"
+        android:layout_width="match_parent"
+        android:layout_height="51sp"
+        android:layout_marginTop="80sp"
+        android:layout_marginHorizontal="55sp"
+        android:background="@drawable/rounded_edit_text_bg"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="32sp"
+        android:hint="Адресс электронной почты"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/company_logo" />
+
+    <Button
+        android:id="@+id/LogIn_Continue"
+        style="@style/Highlighting_text"
+        android:layout_width="match_parent"
+        android:layout_height="51sp"
+        android:layout_marginTop="30sp"
+        android:layout_marginHorizontal="55sp"
+        android:background="@drawable/rounded_btn_bg"
+        android:backgroundTint="@color/blue"
+        android:text="Продолжить"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LogIn_Email" />
+
+    <Button
+        android:id="@+id/LogIn_VK"
+        style="@style/Highlighting_text"
+        android:layout_width="match_parent"
+        android:layout_height="51sp"
+        android:layout_marginTop="30sp"
+        android:layout_marginHorizontal="55sp"
+        android:background="@drawable/rounded_btn_bg"
+        android:backgroundTint="@color/grey"
+        android:text="Войти через VK"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LogIn_Continue" />
+
+    <Button
+        android:id="@+id/LogIn_Google"
+        style="@style/Highlighting_text"
+        android:layout_width="match_parent"
+        android:layout_height="51sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginHorizontal="55sp"
+        android:background="@drawable/rounded_btn_bg"
+        android:backgroundTint="@color/grey"
+        android:text="Войти через Google"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LogIn_VK" />
+
+    <TextView
+        style="@style/Text_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25sp"
+        android:layout_marginHorizontal="76sp"
+        android:text="Продолжая, вы соглашаетесь с положениями основных документов KEDWI, а таже подтверждаете что прочли их."
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/createPassword">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.kedwi.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/createPassword"
+        android:name="com.example.kedwi.CreatePassword"
+        android:label="fragment_create_password"
+        tools:layout="@layout/fragment_create_password" >
+        <action
+            android:id="@+id/action_createPassword_to_createName"
+            app:destination="@id/createName" />
+    </fragment>
+    <fragment
+        android:id="@+id/createName"
+        android:name="com.example.kedwi.CreateName"
+        android:label="fragment_create_name"
+        tools:layout="@layout/fragment_create_name" >
+        <action
+            android:id="@+id/action_createName_to_createBirthdate"
+            app:destination="@id/createBirthdate" />
+    </fragment>
+    <fragment
+        android:id="@+id/createBirthdate"
+        android:name="com.example.kedwi.CreateBirthdate"
+        android:label="fragment_create_birthdate"
+        tools:layout="@layout/fragment_create_birthdate" >
+        <action
+            android:id="@+id/action_createBirthdate_to_createGender"
+            app:destination="@id/createGender" />
+    </fragment>
+    <fragment
+        android:id="@+id/createGender"
+        android:name="com.example.kedwi.CreateGender"
+        android:label="fragment_create_gender"
+        tools:layout="@layout/fragment_create_gender" >
+        <action
+            android:id="@+id/action_createGender_to_createRegion"
+            app:destination="@id/createRegion" />
+    </fragment>
+    <fragment
+        android:id="@+id/createRegion"
+        android:name="com.example.kedwi.CreateRegion"
+        android:label="fragment_create_region"
+        tools:layout="@layout/fragment_create_region" />
+    <fragment
+        android:id="@+id/createAccount"
+        android:name="com.example.kedwi.CreateAccount"
+        android:label="fragment_create_account"
+        tools:layout="@layout/fragment_create_account" >
+        <action
+            android:id="@+id/action_createAccount_to_createPassword"
+            app:destination="@id/createPassword" />
+    </fragment>
+</navigation>
