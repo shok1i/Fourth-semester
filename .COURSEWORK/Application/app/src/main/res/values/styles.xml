@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Header_1">
-        <item name="android:textSize">36dp</item>
+        <item name="android:textSize">35sp</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:letterSpacing">.05</item>
         <item name="android:fontFamily">@font/roboto_condensed_black</item>
@@ -10,21 +10,21 @@
     </style>
 
     <style name="Header_2">
-        <item name="android:textSize">24dp</item>
+        <item name="android:textSize">23sp</item>
         <item name="android:fontFamily">@font/roboto_condensed_semibold</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textColorHint">@color/black</item>
     </style>
 
     <style name="Highlighting_text">
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:fontFamily">@font/roboto_condensed_medium</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textColorHint">@color/black</item>
     </style>
 
     <style name="Text_1">
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:fontFamily">@font/roboto_condensed_light</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textColorHint">@color/black</item>

@@ -23,7 +23,7 @@
         style="@style/Header_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="48sp"
         android:text="Как вас зовут"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"

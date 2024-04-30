@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/createPassword">
+    app:startDestination="@id/createAccount">
 
     <activity
         android:id="@+id/mainActivity"
@@ -41,16 +41,7 @@
         android:id="@+id/createGender"
         android:name="com.example.kedwi.CreateGender"
         android:label="fragment_create_gender"
-        tools:layout="@layout/fragment_create_gender" >
-        <action
-            android:id="@+id/action_createGender_to_createRegion"
-            app:destination="@id/createRegion" />
-    </fragment>
-    <fragment
-        android:id="@+id/createRegion"
-        android:name="com.example.kedwi.CreateRegion"
-        android:label="fragment_create_region"
-        tools:layout="@layout/fragment_create_region" />
+        tools:layout="@layout/fragment_create_gender" />
     <fragment
         android:id="@+id/createAccount"
         android:name="com.example.kedwi.CreateAccount"
