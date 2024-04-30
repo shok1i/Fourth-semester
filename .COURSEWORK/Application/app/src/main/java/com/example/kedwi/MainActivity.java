@@ -9,6 +9,7 @@ import com.example.kedwi.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     private SharedPreferences _sharedPreference;
+    private LocalUserData localUserData;
     private ActivityMainBinding _binding;
 
     @Override
@@ -17,9 +18,12 @@ public class MainActivity extends AppCompatActivity {
         _binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(_binding.getRoot());
 
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container_view, CreateAccount.class, null).commit();
-
+        if (LocalUserDataJSON.FromJSON(this) == null)
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container_view, CreateAccount.class, null).commit();
+        else
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container_view, CreateGender.class, null).commit();
     }
     // TODO:
     // Сохраняем JSON

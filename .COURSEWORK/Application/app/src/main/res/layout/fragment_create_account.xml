@@ -27,7 +27,7 @@
         android:layout_marginHorizontal="55sp"
         android:background="@drawable/rounded_edit_text_bg"
         android:inputType="textEmailAddress"
-        android:paddingLeft="32sp"
+        android:paddingStart="32sp"
         android:hint="Адресс электронной почты"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,9 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LogIn_Email" />
+        app:layout_constraintTop_toBottomOf="@+id/LogIn_Email"
+
+        android:onClick="Continue"/>
 
     <Button
         android:id="@+id/LogIn_VK"

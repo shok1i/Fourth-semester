@@ -1,9 +1,13 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         _binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(_binding.getRoot());
+
+
+        Log.d("Dialog", "OnCreate()");
+
     }
 
     @Override
@@ -73,5 +81,38 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("SOLUTION", _binding.solution.getText().toString());
         intent.putExtra("SOLUTION_BASE", _binding.solutionBase.getText().toString());
         startActivity(intent);
+    }
+
+
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.d("Activity", "onStart()");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("Activity", "onResume()");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d("Activity", "onPause()");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.d("Activity", "onStop()");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d("Activity", "onDestroy()");
     }
 }

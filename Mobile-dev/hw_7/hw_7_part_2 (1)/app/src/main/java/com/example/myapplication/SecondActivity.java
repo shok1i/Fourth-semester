@@ -55,6 +55,4 @@ public class SecondActivity extends AppCompatActivity {
         stopService(new Intent(this, MusicService.class));
         startActivity(intent);
     }
-
-
 }
