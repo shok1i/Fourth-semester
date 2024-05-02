@@ -114,10 +114,7 @@ public class EnterPassword extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            if (getFragmentManager() != null)
-                                getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new EnterBirthdate()).commit();
-
-//                            startActivity(new Intent(getContext(), MainActivity.class));
+                            startActivity(new Intent(getContext(), MainActivity.class));
                         }
                         else {
                             Toast.makeText(getContext(), "LOGIN: False", Toast.LENGTH_SHORT).show();

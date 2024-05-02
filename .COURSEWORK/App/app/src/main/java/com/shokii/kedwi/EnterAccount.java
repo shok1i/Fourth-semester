@@ -49,6 +49,8 @@ public class EnterAccount extends Fragment {
         _userRefs = _dataBase.getReference("users");
 
 
+
+
         _binding = FragmentEnterAccountBinding.inflate(getLayoutInflater());
 
 

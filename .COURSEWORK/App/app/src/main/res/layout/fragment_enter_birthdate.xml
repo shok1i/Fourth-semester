@@ -26,9 +26,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        app:constraint_referenced_ids="textPart1, textHighlight, textPart2"
+        app:constraint_referenced_ids="textPart1, textHighlight, textPart2, textPart3"
         app:flow_firstHorizontalStyle="packed"
-        app:flow_wrapMode="chain2"
 
         android:layout_marginTop="97dp"
         android:layout_marginHorizontal="50dp"
@@ -54,6 +53,7 @@
             android:layout_height="wrap_content"
 
             style="@style/font_medium_header"
+            android:textColor="@color/blue"
             android:textAlignment="center"
 
             android:text="ИМЯ" />
@@ -67,7 +67,18 @@
             style="@style/font_medium_header"
             android:textAlignment="center"
 
-            android:text="! Укажите дату рождения" />
+            android:text="!" />
+
+        <TextView
+            android:id="@+id/textPart3"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            style="@style/font_medium_header"
+            android:textAlignment="center"
+
+            android:text=" Укажите дату рождения" />
 
 
 
