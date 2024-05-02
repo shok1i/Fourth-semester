@@ -17,15 +17,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.shokii.kedwi.databinding.FragmentRegistrationContinueBinding;
 
+
 // TODO:
-//   Переброс на фрагмент кооторый не был заполнен
+//   ? Переброс на фрагмент кооторый не был заполнен
 
 
 
 public class RegistrationContinue extends Fragment {
-    private FragmentRegistrationContinueBinding _binding;
-
     public RegistrationContinue () {super (R.layout.fragment_registration_continue);}
+    private FragmentRegistrationContinueBinding _binding;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

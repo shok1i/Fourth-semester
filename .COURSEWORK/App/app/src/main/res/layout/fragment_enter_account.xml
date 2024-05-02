@@ -108,10 +108,10 @@
 
         android:src="@drawable/welcome_company_logo"
 
-        android:layout_marginBottom="200dp"
+        android:layout_marginTop="120dp"
         android:layout_marginHorizontal="45dp"
 
-        app:layout_constraintBottom_toTopOf="@+id/login_Text"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

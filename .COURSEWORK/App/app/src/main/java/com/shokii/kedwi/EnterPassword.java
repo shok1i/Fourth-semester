@@ -26,6 +26,7 @@ import com.shokii.kedwi.databinding.FragmentEnterPasswordBinding;
 // TODO:
 //  Добавить отработку пустых полей и ошибку ввода
 //  Добавить поднятие интерфейса вверх при открытие клавиатуры
+//  ? Три попытки входа возврат на предыдущее Activity
 
 
 
@@ -58,22 +59,12 @@ public class EnterPassword extends Fragment {
         if (_bundle.getBoolean("isEXIST")) {
             _binding.passwordTitle.setText("Введите пароль");
 
-            _binding.passwordContinue.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    LogInWithEmailAndPassword(email);
-                }
-            });
+            _binding.passwordContinue.setOnClickListener((view) -> LogInWithEmailAndPassword (email));
         }
         else {
             _binding.passwordTitle.setText("Создайте пароль");
 
-            _binding.passwordContinue.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    RegistrationWithEmailAndPassword(email);
-                }
-            });
+            _binding.passwordContinue.setOnClickListener((view) -> RegistrationWithEmailAndPassword (email));
         }
 
 

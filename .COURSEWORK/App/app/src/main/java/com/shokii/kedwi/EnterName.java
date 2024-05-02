@@ -22,13 +22,13 @@ import com.shokii.kedwi.databinding.FragmentEnterNameBinding;
 
 
 public class EnterName extends Fragment {
+    public EnterName () { super (R.layout.fragment_enter_name); }
     private FragmentEnterNameBinding _binding;
 
     private FirebaseAuth _mAuth;
     private FirebaseDatabase _dataBase;
     private DatabaseReference _userRefs;
 
-    public EnterName () { super (R.layout.fragment_enter_name); }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,7 +42,8 @@ public class EnterName extends Fragment {
             @Override
             public void onClick(View v) {
                 _userRefs.child(_mAuth.getUid().toString()).child("name").setValue(_binding.nameText.getText().toString());
-                // Переход на фрагмент с датой
+                if (getFragmentManager() != null)
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new EnterBirthdate()).commit();
             }
         });
 

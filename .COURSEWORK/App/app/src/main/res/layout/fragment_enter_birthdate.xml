@@ -23,11 +23,11 @@
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/welcomeTitleBox"
 
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         app:constraint_referenced_ids="textPart1, textHighlight, textPart2, textPart3"
-        app:flow_firstHorizontalStyle="packed"
+        app:flow_wrapMode="chain"
 
         android:layout_marginTop="97dp"
         android:layout_marginHorizontal="50dp"
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            style="@style/font_medium_header"
+            style="@style/font_large_header"
 
             android:text="Приветствуем, " />
 
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            style="@style/font_medium_header"
+            style="@style/font_large_header"
             android:textColor="@color/blue"
             android:textAlignment="center"
 
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            style="@style/font_medium_header"
+            style="@style/font_large_header"
             android:textAlignment="center"
 
             android:text="!" />
@@ -75,13 +75,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            style="@style/font_medium_header"
+            style="@style/font_large_header"
             android:textAlignment="center"
 
             android:text=" Укажите дату рождения" />
-
-
-
 
     <TextView
         android:id="@+id/welcomeText"
@@ -92,7 +89,7 @@
         style="@style/font_base_text"
         android:textAlignment="center"
 
-        android:text="Нам важно знать вашу дату рождения чтобы обезопасить ваше пребывание внутри сообщество. Зная ваш возврат, мы сможем предоставлять вам более подходящие рекомендации. Мы не передаем эту информацию, и она не будет отображена в вашем профиле."
+        android:text="Нам важно знать вашу дату рождения чтобы обезопасить ваше пребывание внутри сообщество. Зная ваш возраст, мы сможем предоставлять вам более подходящие рекомендации. Мы не передаем эту информацию, и она не будет отображена в вашем профиле."
 
         android:layout_marginTop="32dp"
         android:layout_marginHorizontal="50dp"
@@ -101,6 +98,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+
+    <Button
+        android:id="@+id/date_picker"
+
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+
+        style="@style/font_header"
+        android:background="@drawable/rounded_btn"
+
+        android:text="20  сентября  2024"
+
+        android:layout_marginTop="42dp"
+        android:layout_marginHorizontal="45dp"
+
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/birthdateContinue"

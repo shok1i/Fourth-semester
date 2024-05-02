@@ -17,17 +17,16 @@ import com.shokii.kedwi.databinding.FragmentEnterGenderBinding;
 
 
 public class EnterGender extends Fragment {
+    public EnterGender() {
+        super (R.layout.fragment_enter_gender);
+    }
+
+    private FragmentEnterGenderBinding _binding;
     private FirebaseAuth _mAuth;
     private FirebaseDatabase _dataBase;
     private DatabaseReference _userRefs;
 
 
-
-    private FragmentEnterGenderBinding _binding;
-
-    public EnterGender() {
-        super (R.layout.fragment_enter_gender);
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,30 +37,30 @@ public class EnterGender extends Fragment {
         _binding = FragmentEnterGenderBinding.inflate(getLayoutInflater());
 
 
-        _binding.maleBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                _userRefs.child(_mAuth.getUid().toString()).child("gender").setValue("Male");
-                startActivity(new Intent(getContext(), MainActivity.class));
-            }
-        });
+        _binding.maleBtn.setOnClickListener(this::setGender);
+        _binding.femaleBtn.setOnClickListener(this::setGender);
+        _binding.wontSayBtn.setOnClickListener(this::setGender);
 
-        _binding.femaleBtn.setOnClickListener(new View.OnClickListener() {
+        _binding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                _userRefs.child(_mAuth.getUid().toString()).child("gender").setValue("Female");
-                startActivity(new Intent(getContext(), MainActivity.class));
-            }
-        });
-
-        _binding.wontSayBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                _userRefs.child(_mAuth.getUid().toString()).child("gender").setValue("WontSayBtn");
-                startActivity(new Intent(getContext(), MainActivity.class));
+                if (getFragmentManager() != null)
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new EnterBirthdate()).commit();
             }
         });
 
         return _binding.getRoot();
+    }
+
+    public void setGender(View v) {
+        String gender;
+        if (v.getId() == _binding.maleBtn.getId())
+            _userRefs.child(_mAuth.getUid().toString()).child("gender").setValue("male");
+        else if (v.getId() == _binding.femaleBtn.getId())
+            _userRefs.child(_mAuth.getUid().toString()).child("gender").setValue("female");
+        else
+            _userRefs.child(_mAuth.getUid().toString()).child("gender").setValue("wontSay");
+
+        startActivity(new Intent(getContext(), MainActivity.class));
     }
 }
