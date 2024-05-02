@@ -15,6 +15,7 @@ import com.shokii.kedwi.databinding.FragmentEnterNameBinding;
 
 // TODO:
 //   Переход на новый фрагмент
+//   Добавить отработку пустых полей и ошибку ввода
 //   ? Проверка на существование пользователя с таким именем
 
 
@@ -25,8 +26,6 @@ public class EnterName extends Fragment {
     private FirebaseAuth _mAuth;
     private FirebaseDatabase _dataBase;
     private DatabaseReference _userRefs;
-
-
 
     public EnterName () { super (R.layout.fragment_enter_name); }
 
@@ -49,7 +48,8 @@ public class EnterName extends Fragment {
         _binding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new RegistrationContinue()).commit();
+                if (getFragmentManager() != null)
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new RegistrationContinue()).commit();
             }
         });
 

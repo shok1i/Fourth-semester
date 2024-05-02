@@ -9,7 +9,6 @@ import com.shokii.kedwi.databinding.ActivityLaunchBinding;
 
 
 
-
 public class Launch extends AppCompatActivity {
     private ActivityLaunchBinding _binding;
     private FirebaseAuth _mAuth;
@@ -27,7 +26,7 @@ public class Launch extends AppCompatActivity {
 //            startActivity(new Intent(this, MainActivity.class));
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container_view, EnterAccount.class, null).commit();
+                .add(R.id.fragment_container_view, new EnterAccount()).commit();
     }
 
 }

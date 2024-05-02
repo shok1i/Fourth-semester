@@ -1,0 +1,130 @@
+[
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\drawable_eye_1.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\drawable\\eye_1.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\drawable_rounded_edit_text_bg.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\drawable\\rounded_edit_text_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\layout_fragment_create_password.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\layout\\fragment_create_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\layout_fragment_create_name.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\layout\\fragment_create_name.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.kedwi.app-debug-43:/layout_activity_main.xml.flat",
+        "source": "com.example.kedwi.app-main-45:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\layout_fragment_create_account.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\layout\\fragment_create_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\font_roboto_condensed_semibold.ttf.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\font\\roboto_condensed_semibold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\font_roboto_condensed_black.ttf.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\font\\roboto_condensed_black.ttf"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\navigation_navigation.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\navigation\\navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\drawable_company_logo.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\drawable\\company_logo.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\layout_fragment_create_gender.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\layout\\fragment_create_gender.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\drawable_rounded_btn_bg.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\drawable\\rounded_btn_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\drawable_arrow_left.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\drawable\\arrow_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\layout_fragment_create_birthdate.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\layout\\fragment_create_birthdate.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\font_roboto_condensed_medium.ttf.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\font\\roboto_condensed_medium.ttf"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\font_roboto_condensed_light.ttf.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\font\\roboto_condensed_light.ttf"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-debug-43:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\mipmap-mdpi\\ic_launcher.webp"
+    }
+]

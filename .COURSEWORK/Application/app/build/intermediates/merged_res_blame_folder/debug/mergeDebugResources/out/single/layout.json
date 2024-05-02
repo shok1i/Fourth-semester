@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-mergeDebugResources-42:\\layout\\fragment_create_gender.xml",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\layout\\fragment_create_gender.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-mergeDebugResources-42:\\layout\\fragment_create_name.xml",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\layout\\fragment_create_name.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-mergeDebugResources-42:\\layout\\fragment_create_birthdate.xml",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\layout\\fragment_create_birthdate.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-mergeDebugResources-42:\\layout\\fragment_create_account.xml",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\layout\\fragment_create_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-mergeDebugResources-42:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-mergeDebugResources-42:\\layout\\fragment_create_password.xml",
+        "source": "C:\\Users\\shilo\\.gradle\\daemon\\8.4\\com.example.kedwi.app-main-45:\\layout\\fragment_create_password.xml"
+    },
+    {
+        "merged": "com.example.kedwi.app-mergeDebugResources-42:/layout/activity_main.xml",
+        "source": "com.example.kedwi.app-main-45:/layout/activity_main.xml"
+    }
+]

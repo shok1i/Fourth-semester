@@ -1,6 +1,7 @@
 package com.shokii.kedwi;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ import com.shokii.kedwi.databinding.FragmentEnterAccountBinding;
 
 // Patterns.EMAIL_ADDRESS.matcher(email).matches()
 // Данный метод проверяет корректность ввода почты
+
 
 
 public class EnterAccount extends Fragment {
@@ -65,13 +67,16 @@ public class EnterAccount extends Fragment {
                             String databaseEmail = userUID.child("email").getValue().toString();
                             if(databaseEmail.equals(email)) {
                                 isEXIST = true;
+                                Log.d("my", "Email: " + email + " Firebase: " + databaseEmail);
                             }
                         }
 
                         _bundle.putString("EMAIL", email);
                         _bundle.putBoolean("isEXIST", isEXIST);
                         nextFragment.setArguments(_bundle);
-                        getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, nextFragment).commit();
+
+                        if (getFragmentManager() != null)
+                            getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, nextFragment).commit();
                     }
 
                     @Override

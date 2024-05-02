@@ -28,6 +28,7 @@ import com.shokii.kedwi.databinding.FragmentEnterPasswordBinding;
 //  Добавить поднятие интерфейса вверх при открытие клавиатуры
 
 
+
 public class EnterPassword extends Fragment {
     private FragmentEnterPasswordBinding _binding;
     private Bundle _bundle;
@@ -46,7 +47,7 @@ public class EnterPassword extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         _mAuth = FirebaseAuth.getInstance();
         _dataBase = FirebaseDatabase.getInstance();
-        _userRefs = _dataBase.getReference("users");
+        _userRefs = _dataBase.getReference().child("users");
 
 
         _binding = FragmentEnterPasswordBinding.inflate(getLayoutInflater());
@@ -98,7 +99,8 @@ public class EnterPassword extends Fragment {
         _binding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new EnterAccount()).commit();
+                if (getFragmentManager() != null)
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new EnterAccount()).commit();
             }
         });
 
@@ -112,28 +114,16 @@ public class EnterPassword extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            DatabaseReference currentUserRef = _userRefs.child(_mAuth.getUid());
+                            if (getFragmentManager() != null)
+                                getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new EnterBirthdate()).commit();
 
-                            currentUserRef.addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    // Если у пользователя не 3 заполненых поля то он зарегистрировался не до конца
-                                    if (snapshot.getChildrenCount() != 5) {
-                                        getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new RegistrationContinue()).commit();
-                                    }
-                                    else
-                                        startActivity(new Intent(getContext(), MainActivity.class));
-
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {  }
-                            });
+//                            startActivity(new Intent(getContext(), MainActivity.class));
                         }
                         else {
                             Toast.makeText(getContext(), "LOGIN: False", Toast.LENGTH_SHORT).show();
                         }
                     }
+
                 });
     }
 
@@ -144,10 +134,11 @@ public class EnterPassword extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Записываем в БД информацию пользователя
-                            _userRefs.child(_mAuth.getUid().toString()).child("email").setValue(email);
-                            _userRefs.child(_mAuth.getUid().toString()).child("password").setValue(_binding.passwordText.getText().toString());
+                            _userRefs.child(_mAuth.getUid()).child("email").setValue(email);
+                            _userRefs.child(_mAuth.getUid()).child("password").setValue(_binding.passwordText.getText().toString());
 
-                            getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new RegistrationContinue()).commit();
+                            if (getFragmentManager() != null)
+                                getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new RegistrationContinue()).commit();
                         }
                         else {
                             Toast.makeText(getContext(), "REGISTRATION: False", Toast.LENGTH_SHORT).show();
