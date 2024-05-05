@@ -25,11 +25,14 @@ public class Launch extends AppCompatActivity {
 
         _mAuth = FirebaseAuth.getInstance();
         //  Если пользователь уже входил на устройстве то пропускаем вход/регистрацию
-        if (_mAuth.getCurrentUser() != null)
-            startActivity(new Intent(this, MainActivity.class));
+//        if (_mAuth.getCurrentUser() != null)
+//            startActivity(new Intent(this, MainActivity.class));
+//
+//        getSupportFragmentManager().beginTransaction()
+//                .add(R.id.fragment_container_view, new EnterAccount()).commit();
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container_view, new EnterAccount()).commit();
+                .add(R.id.fragment_container_view, new HomePage_p1()).commit();
     }
 
 }
