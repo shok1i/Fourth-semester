@@ -1,5 +1,6 @@
 [versions]
 agp = "8.3.2"
+glide = "4.15.1"
 gson = "2.10.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -10,8 +11,10 @@ activity = "1.8.0"
 constraintlayout = "2.1.4"
 firebaseDatabase = "20.3.1"
 firebaseAuth = "22.3.1"
+firebaseStorage = "21.0.0"
 
 [libraries]
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -22,6 +25,7 @@ activity = { group = "androidx.activity", name = "activity", version.ref = "acti
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

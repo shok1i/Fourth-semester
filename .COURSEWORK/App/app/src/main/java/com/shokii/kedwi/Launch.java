@@ -32,7 +32,7 @@ public class Launch extends AppCompatActivity {
 //                .add(R.id.fragment_container_view, new EnterAccount()).commit();
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container_view, new HomePage_p1()).commit();
+                .add(R.id.fragment_container_view, new HomePage()).commit();
     }
 
 }
