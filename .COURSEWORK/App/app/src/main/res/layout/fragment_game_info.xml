@@ -115,8 +115,6 @@
 
                 style="@style/font_base_text"
 
-                android:text="Дата выхода:"
-
                 android:layout_marginStart="20dp" />
         </LinearLayout>
 
@@ -149,9 +147,7 @@
 
                 style="@style/font_base_text"
 
-                android:text="Издатель:"
-
-                android:layout_marginStart="39dp" />
+                android:layout_marginStart="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -182,8 +178,6 @@
                 android:layout_height="wrap_content"
 
                 style="@style/font_base_text"
-
-                android:text="Разработчик:"
 
                 android:layout_marginStart="20dp" />
         </LinearLayout>
@@ -217,7 +211,7 @@
 
                 android:background="@color/grey"
 
-                android:layout_marginStart="21dp" />
+                android:layout_marginStart="20dp" />
         </LinearLayout>
 
         <TextView

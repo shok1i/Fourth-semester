@@ -69,10 +69,8 @@ public class EnterAccount extends Fragment {
 
                 for (DataSnapshot userUID :snapshot.getChildren()) {
                     String databaseEmail = userUID.child("email").getValue().toString();
-                    if(databaseEmail.equals(email)) {
+                    if(databaseEmail.equals(email))
                         isEXIST = true;
-                        Log.d("my", "Email: " + email + " Firebase: " + databaseEmail);
-                    }
                 }
 
                 _bundle.putString("EMAIL", email);

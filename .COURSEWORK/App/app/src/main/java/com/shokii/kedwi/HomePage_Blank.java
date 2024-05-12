@@ -37,6 +37,9 @@ public class HomePage_Blank extends Fragment {
     private FirebaseStorage storage;
     private StorageReference storageRef;
     private DatabaseReference gameRef;
+    GameInfo frag = new GameInfo();
+    String temp;
+
 
     public static Fragment newInstance(int position) {
         type = position;
@@ -62,7 +65,14 @@ public class HomePage_Blank extends Fragment {
         storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference().child("games_covers");
 
-        gameRef = type == 0 ? gameRef.child("out") : gameRef.child("announcement");
+        if (type == 0) {
+            gameRef = gameRef.child("out");
+            temp = "out";
+        }
+        else {
+            gameRef = gameRef.child("announcement");
+            temp = "announcement";
+        }
 
         _binding.Announcements.setOnItemClickListener(this::itemClick);
 
@@ -80,13 +90,9 @@ public class HomePage_Blank extends Fragment {
     private void itemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Bundle bundle = new Bundle();
         bundle.putString("NAME", gameItems.get(i).gameTitle.toString());
-        GameInfo frag = new GameInfo();
+        bundle.putString("STATUS", temp);
+
         frag.setArguments(bundle);
-
-        Log.d("my", bundle.toString());
-        Log.d("my", frag.toString());
-        Log.d("my", gameItems.get(i).gameTitle);
-
 
         if (getFragmentManager() != null)
             getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, frag).commit();
