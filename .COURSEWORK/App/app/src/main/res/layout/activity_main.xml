@@ -25,6 +25,7 @@
         android:layout_height="44dp"
 
         android:background="@color/grey"
+        app:itemIconTint="@drawable/bottom_navigation_selector"
 
         app:menu="@menu/nav_menu"
 

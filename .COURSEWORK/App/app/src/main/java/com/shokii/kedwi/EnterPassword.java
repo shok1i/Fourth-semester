@@ -124,6 +124,7 @@ public class EnterPassword extends Fragment {
                             // Записываем в БД информацию пользователя
                             _userRefs.child(_mAuth.getUid()).child("email").setValue(email);
                             _userRefs.child(_mAuth.getUid()).child("password").setValue(_binding.passwordText.getText().toString());
+                            _userRefs.child(_mAuth.getUid()).child("status").setValue("Статус не указан");
 
                             if (getFragmentManager() != null)
                                 getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new RegistrationContinue()).commit();

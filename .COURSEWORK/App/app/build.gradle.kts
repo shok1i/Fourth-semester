@@ -53,4 +53,6 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
 
     implementation (libs.glide)
+
+    api (libs.android.image.cropper)
 }

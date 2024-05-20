@@ -27,14 +27,14 @@
     </style>
 
     <style name="font_highlighting_text">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/roboto_condensed_medium</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textColorHint">@color/black</item>
     </style>
 
     <style name="font_base_text">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/roboto_condensed_light</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textColorHint">@color/black</item>

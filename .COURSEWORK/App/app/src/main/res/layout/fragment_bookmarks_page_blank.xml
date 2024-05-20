@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <GridView
-        android:id="@+id/gamesGrid"
+        android:id="@+id/gamesGridBookmarks"
 
         android:horizontalSpacing="10dp"
         android:verticalSpacing="8dp"

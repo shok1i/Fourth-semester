@@ -1,7 +1,6 @@
 package com.shokii.kedwi;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,16 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 import com.shokii.kedwi.databinding.FragmentHomePageBlankBinding;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 // TODO:
@@ -28,93 +27,104 @@ import java.util.ArrayList;
 
 
 public class HomePage_Blank extends Fragment {
-    private static int type;
-    private ArrayList<GameItem> gameItems = new ArrayList<>();
-    private FragmentHomePageBlankBinding _binding;
-    private GridViewAdapter adapter;
+    static int game_status;
 
-    private FirebaseDatabase database;
-    private FirebaseStorage storage;
-    private StorageReference storageRef;
-    private DatabaseReference gameRef;
-    GameInfo frag = new GameInfo();
-    String temp;
+    FragmentHomePageBlankBinding homePageBlankBinding;
+
+    //    Firebase
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
+
+    // Games lists
+    ArrayList<GameItem>
+            OUT = new ArrayList<>(), ANNOUNCEMENT = new ArrayList<>();
 
 
     public static Fragment newInstance(int position) {
-        type = position;
+        game_status = position;
         return new HomePage_Blank();
     }
 
-    public interface SimpleCallback<T> {
-        void callback(T data);
+    public HomePage_Blank(){
+            super(R.layout.fragment_home_page_blank);
     }
 
-    public HomePage_Blank() {
-        super(R.layout.fragment_home_page_blank);
-    }
-
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        _binding = FragmentHomePageBlankBinding.inflate(getLayoutInflater());
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        database = FirebaseDatabase.getInstance();
-        gameRef = database.getReference().child("games");
+        homePageBlankBinding = FragmentHomePageBlankBinding.inflate(getLayoutInflater());
 
-        storage = FirebaseStorage.getInstance();
-        storageRef = storage.getReference().child("games_covers");
-
-        if (type == 0) {
-            gameRef = gameRef.child("out");
-            temp = "out";
-        }
-        else {
-            gameRef = gameRef.child("announcement");
-            temp = "announcement";
-        }
-
-        _binding.Announcements.setOnItemClickListener(this::itemClick);
-
-        returnData(new SimpleCallback<ArrayList<GameItem>>() {
+        databaseRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void callback(ArrayList<GameItem> data) {
-                adapter = new GridViewAdapter(getContext(), data);
-                _binding.Announcements.setAdapter(adapter);
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String title, src, userGameStatus = "not played";
+
+                Iterable<DataSnapshot> GAME_OUT = snapshot.child("games").child("out").getChildren();
+                for (DataSnapshot games : GAME_OUT) {
+                    title = games.getKey();
+                    src = games.child("cover").getValue().toString();
+
+                    Iterable<DataSnapshot> USER = snapshot.child("users").child(mAuth.getUid()).child("game statistic").getChildren();
+                    for (DataSnapshot userGames : USER)
+                        for (DataSnapshot item : userGames.getChildren())
+                            if (Objects.equals(title, item.getKey()))
+                                userGameStatus = userGames.getKey();
+
+                    GameItem gameItem = new GameItem(title, src, userGameStatus);
+                    OUT.add(gameItem);
+                    userGameStatus = "not played";
+                }
+
+                Iterable<DataSnapshot> GAME_ANNOUNCEMENT = snapshot.child("games").child("announcement").getChildren();
+                for (DataSnapshot games : GAME_ANNOUNCEMENT) {
+                    title = games.getKey();
+                    src = games.child("cover").getValue().toString();
+
+                    Iterable<DataSnapshot> USER = snapshot.child("users").child(mAuth.getUid()).child("game statistic").getChildren();
+                    for (DataSnapshot userGames : USER)
+                        for (DataSnapshot item : userGames.getChildren())
+                            if (Objects.equals(title, item.getKey()))
+                                userGameStatus = userGames.getKey();
+
+                    GameItem gameItem = new GameItem(title, src, userGameStatus);
+                    ANNOUNCEMENT.add(gameItem);
+                    userGameStatus = "not played";
+                }
+
+
+                GridViewAdapter adapter = game_status == 0 ? new GridViewAdapter(getContext(), OUT) : new GridViewAdapter(getContext(), ANNOUNCEMENT);
+                homePageBlankBinding.gamesGrid.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
 
-        return _binding.getRoot();
+        homePageBlankBinding.gamesGrid.setOnItemClickListener(this::itemClick);
+    }
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return homePageBlankBinding.getRoot();
     }
 
     private void itemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Bundle bundle = new Bundle();
-        bundle.putString("NAME", gameItems.get(i).gameTitle.toString());
-        bundle.putString("STATUS", temp);
+        GameItem item = game_status == 0 ? OUT.get(i) : ANNOUNCEMENT.get(i);
+        String gameStatus = game_status == 0 ? "out" : "announcement";
 
-        frag.setArguments(bundle);
+        Bundle bundle = new Bundle();
+        bundle.putString("NAME", item.gameTitle);
+        bundle.putString("IMG_SRC", item.imgSrc);
+        bundle.putString("GAME_STATUS", gameStatus);
+        bundle.putString("USER_GAME_STATUS", item.gameStatus);
+
+        GameInfo gameInfo = new GameInfo();
+        gameInfo.setArguments(bundle);
 
         if (getFragmentManager() != null)
-            getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, frag).commit();
+            getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, gameInfo).commit();
     }
-
-    private void returnData (SimpleCallback<ArrayList<GameItem>> arrayCallBack) {
-        gameRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot snap : snapshot.getChildren()) {
-                    GameItem gameItem = new GameItem(
-                            snap.getKey(),
-                            snap.child("cover").getValue().toString()
-                    );
-                    gameItems.add(gameItem);
-                }
-                arrayCallBack.callback(gameItems);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {  }
-        });
-    }
-
 }

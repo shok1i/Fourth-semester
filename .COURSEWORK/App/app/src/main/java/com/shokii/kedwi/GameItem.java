@@ -1,10 +1,9 @@
 package com.shokii.kedwi;
 
 public class GameItem {
-    public int gameStatus;
-    public String imgSrc, gameTitle;
+    public String imgSrc, gameTitle, gameStatus;
 
-    public GameItem(String  gameTitle, String imgSrc) {
-        this.gameTitle = gameTitle; this.imgSrc = imgSrc;
+    public GameItem(String  gameTitle, String imgSrc, String gameStatus) {
+        this.gameTitle = gameTitle; this.imgSrc = imgSrc; this.gameStatus = gameStatus;
     }
 }

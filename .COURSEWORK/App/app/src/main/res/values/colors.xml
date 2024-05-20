@@ -7,4 +7,10 @@
     <color name="blue">#3CACD2</color>
     <color name="white">#FFFFFF</color>
     <color name="grey">#E5E9EB</color>
+
+    <color name="passing">#67BB6D</color>
+    <color name="pass">#5C6CC1</color>
+    <color name="abandoned">#EE5451</color>
+    <color name="planned">#B565BB</color>
+    <color name="postponed">#FFC928</color>
 </resources>

@@ -47,8 +47,6 @@
             android:layout_marginHorizontal="32dp"
             android:layout_marginTop="12dp"
 
-            android:text="Game name text"
-
             app:layout_constraintTop_toBottomOf="@+id/gameLogo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -59,8 +57,8 @@
             android:layout_width="wrap_content"
             android:layout_height="32dp"
 
-            style="@style/font_base_text"
-            android:background="@drawable/rounded_btn_game"
+            style="@style/font_highlighting_text"
+            android:background="@drawable/status_not_played"
             android:textAllCaps="false"
 
             android:text="Не играл"
@@ -100,7 +98,7 @@
             <TextView
                 android:id="@+id/dateHead"
 
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
 
                 style="@style/font_base_text"
@@ -132,7 +130,7 @@
             <TextView
                 android:id="@+id/publisherHead"
 
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
 
                 style="@style/font_base_text"
@@ -164,7 +162,7 @@
             <TextView
                 android:id="@+id/developerHead"
 
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
 
                 style="@style/font_base_text"
@@ -196,7 +194,7 @@
             <TextView
                 android:id="@+id/pegiHead"
 
-                android:layout_width="75dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
 
                 style="@style/font_base_text"
@@ -237,8 +235,6 @@
             style="@style/font_base_text"
             android:layout_marginHorizontal="32dp"
             android:layout_marginTop="16dp"
-
-            android:text="Об этой игре"
 
             app:layout_constraintTop_toBottomOf="@+id/about"
             app:layout_constraintStart_toStartOf="parent"

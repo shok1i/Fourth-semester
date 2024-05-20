@@ -22,12 +22,9 @@
         android:layout_width="100dp"
 
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_text"
-        android:backgroundTint="@null"
-        android:paddingVertical="3sp"
-        android:text=" "
-        android:textAlignment="center"
 
+        android:paddingVertical="3sp"
+        android:textAlignment="center"
         android:textSize="9sp"
 
         app:layout_constraintBottom_toBottomOf="@+id/gameLogo"

@@ -25,8 +25,10 @@ public class Launch extends AppCompatActivity {
 
         _mAuth = FirebaseAuth.getInstance();
         //  Если пользователь уже входил на устройстве то пропускаем вход/регистрацию
-        if (_mAuth.getCurrentUser() != null)
+        if (_mAuth.getCurrentUser() != null) {
             startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container_view, new EnterAccount()).commit();
