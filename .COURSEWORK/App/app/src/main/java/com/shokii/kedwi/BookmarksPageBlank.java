@@ -21,79 +21,45 @@ import java.util.ArrayList;
 
 
 public class BookmarksPageBlank extends Fragment {
-
-    private int GAME_TYPE = 0;
+    private String GAME_TYPE = "";
     FragmentBookmarksPageBlankBinding bookmarksPageBlank;
-
-    // Firebase
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
+    ArrayList<GameItem> list = new ArrayList<>();
 
-    // Games lists
-    ArrayList<ArrayList <GameItem>> list = new ArrayList<>(6);
-
-    public BookmarksPageBlank(int game_type) {
+    public BookmarksPageBlank(String game_type) {
         super(R.layout.fragment_bookmarks_page_blank);
         GAME_TYPE = game_type;
     }
 
-    public static Fragment newInstance(int position) {
-        return new BookmarksPageBlank(position);
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bookmarksPageBlank = FragmentBookmarksPageBlankBinding.inflate(getLayoutInflater());
-        for (int i = 0; i < 6; i++) {
-            list.add(new ArrayList<>());
-        }
+
 
         databaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (int i = 0; i < 6; i++) {
-                    list.set(i, new ArrayList<>());
-                }
-
-                Iterable<DataSnapshot>
-                        USER_GAMES = snapshot.child("users").child(mAuth.getUid()).child("game statistic").getChildren();
-
+                list = new ArrayList<>();
                 DataSnapshot
+                        USER_GAMES = snapshot.child("users").child(mAuth.getUid()).child("game statistic"),
                         GAMES = snapshot.child("games").child("out");
 
-                for (DataSnapshot user_status : USER_GAMES) {
-                    for (DataSnapshot user_game : user_status.getChildren()) {
+                for (DataSnapshot snap : USER_GAMES.child(GAME_TYPE).getChildren()) {
+                    String gameName = snap.getKey();
+                    String imgSrc = "@null";
+                    if (GAMES.child(gameName).child("cover").getValue() != null)
+                        imgSrc  = GAMES.child(gameName).child("cover").getValue().toString();
+                    String gameStatus = GAME_TYPE;
 
-                        String imgSrc = GAMES.child(user_game.getKey()).child("cover").getValue().toString();
-                        GameItem gameItem = new GameItem(user_game.getKey(), imgSrc, user_status.getKey());
+                    GameItem gameItem = new GameItem(gameName, imgSrc, gameStatus);
 
-                        switch (user_status.getKey()){
-                            case "passing":
-                                list.get(1).add(gameItem);
-//                                passing_list.add(gameItem);
-                                break;
-                            case "planned":
-                                list.get(2).add(gameItem);
-//                                planned_list.add(gameItem);
-                                break;
-                            case "pass":
-                                list.get(3).add(gameItem);
-//                                pass_list.add(gameItem);
-                                break;
-                            case "postponed":
-                                list.get(4).add(gameItem);
-//                                postponed_list.add(gameItem);
-                                break;
-                            case "abandoned":
-                                list.get(5).add(gameItem);
-//                                abandoned_list.add(gameItem);
-                                break;
-                        }
-                    }
+                    list.add(gameItem);
                 }
 
-                GridViewAdapter adapter = new GridViewAdapter(getContext(), list.get(GAME_TYPE));
+                GridViewAdapter adapter = new GridViewAdapter(getContext(), list);
                 bookmarksPageBlank.gamesGridBookmarks.setAdapter(adapter);
             }
 
@@ -108,13 +74,12 @@ public class BookmarksPageBlank extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         bookmarksPageBlank.gamesGridBookmarks.setOnItemClickListener(this::itemClick);
         return bookmarksPageBlank.getRoot();
     }
 
     private void itemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        GameItem item = list.get(GAME_TYPE).get(i);
+        GameItem item = list.get(i);
 
         Bundle bundle = new Bundle();
         bundle.putString("NAME", item.gameTitle);

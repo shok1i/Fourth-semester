@@ -2,6 +2,7 @@ package com.shokii.kedwi;
 
 import android.content.Context;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,6 +88,7 @@ public class GridViewAdapter extends ArrayAdapter<GameItem> {
             gameStatus.setText(options[i]);
         }
 
+        Log.d("my_Adapter", gameItem.gameTitle + " // " + options[i]);
         return listView;
     }
 }

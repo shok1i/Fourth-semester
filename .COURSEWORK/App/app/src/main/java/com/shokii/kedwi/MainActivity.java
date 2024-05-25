@@ -19,7 +19,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.shokii.kedwi.databinding.ActivityMainBinding;
-
 import com.theartofdev.edmodo.cropper.CropImage;
 
 public class MainActivity extends AppCompatActivity /* implements BottomNavigationView.OnNavigationItemSelectedListener */ {
@@ -74,7 +73,6 @@ public class MainActivity extends AppCompatActivity /* implements BottomNavigati
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container_view, new HomePage()).commit();
     }
-
 
     private void loadFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()

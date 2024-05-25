@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,99 +26,76 @@ import java.util.Objects;
 
 
 public class HomePage_Blank extends Fragment {
-    static int game_status;
-
-    FragmentHomePageBlankBinding homePageBlankBinding;
-
-    //    Firebase
+    private String GAME_TYPE = "";
+    FragmentHomePageBlankBinding bookmarksPageBlank;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
+    ArrayList<GameItem> list = new ArrayList<>();
 
-    // Games lists
-    ArrayList<GameItem>
-            OUT = new ArrayList<>(), ANNOUNCEMENT = new ArrayList<>();
-
-
-    public static Fragment newInstance(int position) {
-        game_status = position;
-        return new HomePage_Blank();
+    public HomePage_Blank(String game_type){
+        super(R.layout.fragment_home_page_blank);
+        GAME_TYPE = game_type;
     }
 
-    public HomePage_Blank(){
-            super(R.layout.fragment_home_page_blank);
-    }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        bookmarksPageBlank = FragmentHomePageBlankBinding.inflate(getLayoutInflater());
 
-        homePageBlankBinding = FragmentHomePageBlankBinding.inflate(getLayoutInflater());
+        bookmarksPageBlank.gamesGrid.setOnItemClickListener(this::itemClick);
 
         databaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String title, src, userGameStatus = "not played";
+                list = new ArrayList<>();
+                DataSnapshot
+                        USER_GAMES = snapshot.child("users").child(mAuth.getUid()).child("game statistic"),
+                        GAMES = snapshot.child("games").child(GAME_TYPE);
 
-                Iterable<DataSnapshot> GAME_OUT = snapshot.child("games").child("out").getChildren();
-                for (DataSnapshot games : GAME_OUT) {
-                    title = games.getKey();
-                    src = games.child("cover").getValue().toString();
+                for (DataSnapshot snap : GAMES.getChildren()) {
+                    String gameName = snap.getKey();
+                    String imgSrc = "@null";
+                    if (snap.child("cover").getValue() != null)
+                        imgSrc  = GAMES.child(gameName).child("cover").getValue().toString();
+                    String gameStatus = "not played";
 
-                    Iterable<DataSnapshot> USER = snapshot.child("users").child(mAuth.getUid()).child("game statistic").getChildren();
-                    for (DataSnapshot userGames : USER)
-                        for (DataSnapshot item : userGames.getChildren())
-                            if (Objects.equals(title, item.getKey()))
-                                userGameStatus = userGames.getKey();
 
-                    GameItem gameItem = new GameItem(title, src, userGameStatus);
-                    OUT.add(gameItem);
-                    userGameStatus = "not played";
+                    for (DataSnapshot users_list : USER_GAMES.getChildren())
+                        for (DataSnapshot game : users_list.getChildren())
+                            if (Objects.equals(gameName, game.getKey()))
+                                gameStatus = users_list.getKey();
+
+                    GameItem gameItem = new GameItem(gameName, imgSrc, gameStatus);
+                    list.add(gameItem);
                 }
 
-                Iterable<DataSnapshot> GAME_ANNOUNCEMENT = snapshot.child("games").child("announcement").getChildren();
-                for (DataSnapshot games : GAME_ANNOUNCEMENT) {
-                    title = games.getKey();
-                    src = games.child("cover").getValue().toString();
-
-                    Iterable<DataSnapshot> USER = snapshot.child("users").child(mAuth.getUid()).child("game statistic").getChildren();
-                    for (DataSnapshot userGames : USER)
-                        for (DataSnapshot item : userGames.getChildren())
-                            if (Objects.equals(title, item.getKey()))
-                                userGameStatus = userGames.getKey();
-
-                    GameItem gameItem = new GameItem(title, src, userGameStatus);
-                    ANNOUNCEMENT.add(gameItem);
-                    userGameStatus = "not played";
-                }
-
-
-                GridViewAdapter adapter = game_status == 0 ? new GridViewAdapter(getContext(), OUT) : new GridViewAdapter(getContext(), ANNOUNCEMENT);
-                homePageBlankBinding.gamesGrid.setAdapter(adapter);
+                GridViewAdapter adapter = new GridViewAdapter(getContext(), list);
+                bookmarksPageBlank.gamesGrid.setAdapter(adapter);
             }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
-
-        homePageBlankBinding.gamesGrid.setOnItemClickListener(this::itemClick);
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return homePageBlankBinding.getRoot();
+        bookmarksPageBlank.gamesGrid.setOnItemClickListener(this::itemClick);
+        return bookmarksPageBlank.getRoot();
     }
 
     private void itemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        GameItem item = game_status == 0 ? OUT.get(i) : ANNOUNCEMENT.get(i);
-        String gameStatus = game_status == 0 ? "out" : "announcement";
-
+        GameItem item = list.get(i);
         Bundle bundle = new Bundle();
         bundle.putString("NAME", item.gameTitle);
         bundle.putString("IMG_SRC", item.imgSrc);
-        bundle.putString("GAME_STATUS", gameStatus);
+        bundle.putString("GAME_STATUS", GAME_TYPE);
         bundle.putString("USER_GAME_STATUS", item.gameStatus);
+        bundle.putBoolean("PAGE", false);
 
         GameInfo gameInfo = new GameInfo();
         gameInfo.setArguments(bundle);
