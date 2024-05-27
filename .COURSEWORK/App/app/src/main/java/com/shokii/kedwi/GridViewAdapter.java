@@ -88,7 +88,6 @@ public class GridViewAdapter extends ArrayAdapter<GameItem> {
             gameStatus.setText(options[i]);
         }
 
-        Log.d("my_Adapter", gameItem.gameTitle + " // " + options[i]);
         return listView;
     }
 }

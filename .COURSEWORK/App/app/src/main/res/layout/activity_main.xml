@@ -29,5 +29,17 @@
 
         app:layout_constraintBottom_toBottomOf="parent" />
 
+    <Button
+        android:id="@+id/adminAdd"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/ellipse"
+        android:text="+"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

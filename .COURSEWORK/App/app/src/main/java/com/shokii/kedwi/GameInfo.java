@@ -1,5 +1,6 @@
 package com.shokii.kedwi;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -227,9 +228,10 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
         userGameRef.child(newStatus).child(gameName).setValue("flag");
     }
     private void back(View view) {
-        if (bundle.getBoolean("PAGE"))
-            getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new BookmarksPage()).commit();
-        else
-            getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new HomePage()).commit();
+        startActivity(new Intent(getContext(), MainActivity.class));
+//        if (bundle.getBoolean("PAGE"))
+//            getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new BookmarksPage()).commit();
+//        else
+//            getFragmentManager().beginTransaction().replace(R.id.fragment_container_view, new HomePage()).commit();
     }
 }
