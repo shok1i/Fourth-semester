@@ -27,7 +27,7 @@
             android:id="@+id/gameLogo"
 
             android:layout_width="180dp"
-            android:layout_height="271dp"
+            android:layout_height="270dp"
 
             android:background="@color/grey"
 

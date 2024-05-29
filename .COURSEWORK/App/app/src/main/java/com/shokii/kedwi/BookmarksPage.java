@@ -19,6 +19,8 @@ public class BookmarksPage extends Fragment {
         super(R.layout.fragment_bookmarks_page);
     }
 
+
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         FragmentBookmarksPageBinding _binding = FragmentBookmarksPageBinding.inflate(getLayoutInflater());
@@ -28,7 +30,7 @@ public class BookmarksPage extends Fragment {
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
 // Создайте адаптер для ViewPager
-        ViewPagerAdapterBookmarks pagerAdapter = new ViewPagerAdapterBookmarks(getFragmentManager());
+        ViewPagerAdapterBookmarks pagerAdapter = new ViewPagerAdapterBookmarks(getParentFragmentManager());
         viewPager.setAdapter(pagerAdapter);
 
 // Свяжите TabLayout с ViewPager

@@ -45,9 +45,6 @@ public class Settings extends Fragment {
         dataBase = FirebaseDatabase.getInstance();
         userRefs = dataBase.getReference("users");
 
-
-
-
         userRefs.child(mAuth.getUid().toString()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

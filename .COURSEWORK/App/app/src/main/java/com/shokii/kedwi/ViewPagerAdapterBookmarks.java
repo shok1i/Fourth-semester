@@ -11,7 +11,7 @@ public class ViewPagerAdapterBookmarks extends FragmentPagerAdapter {
             {"passing", "planned", "pass", "postponed", "abandoned"}};
 
     public ViewPagerAdapterBookmarks(FragmentManager fm) {
-        super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        super(fm);
     }
 
     @Override

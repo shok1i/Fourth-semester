@@ -23,9 +23,8 @@ public class HomePage extends Fragment {
 
         TabLayout tabLayout = _binding.tabLayout;
         ViewPager viewPager = _binding.pager;
-        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
-        ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getFragmentManager());
+        ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getParentFragmentManager());
         viewPager.setAdapter(pagerAdapter);
 
         tabLayout.setupWithViewPager(viewPager);

@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity /* implements BottomNavigati
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         _binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(_binding.getRoot());
-
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -49,6 +49,13 @@ public class MainActivity extends AppCompatActivity /* implements BottomNavigati
         storageRef = storage.getReference().child("user_image");
 
         _binding.bottomNav.setSelectedItemId(R.id.menu_home);
+
+
+        HomePage homePage = new HomePage();
+        CalendarPage calendarPage = new CalendarPage();
+        BookmarksPage bookmarksPage = new BookmarksPage();
+        UserPage userPage = new UserPage();
+
         _binding.bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
             @Override
@@ -57,20 +64,20 @@ public class MainActivity extends AppCompatActivity /* implements BottomNavigati
 
                 if (item.getItemId() == R.id.menu_home && curPage != R.id.menu_home) {
                     // menu_home
-                    loadFragment(new HomePage());
+                    loadFragment(homePage);
                     return true;
                 }
                 if (item.getItemId() == R.id.menu_calendar && curPage != R.id.menu_calendar) {
                     // menu_calendar
-                    loadFragment(new CalendarPage());
+                    loadFragment(calendarPage);
                     return true;
                 }if (item.getItemId() == R.id.menu_bookmarks && curPage != R.id.menu_bookmarks) {
                     // menu_bookmarks
-                    loadFragment(new BookmarksPage());
+                    loadFragment(bookmarksPage);
                     return true;
                 }if (item.getItemId() == R.id.menu_user && curPage != R.id.menu_user) {
                     // menu_user
-                    loadFragment(new UserPage());
+                    loadFragment(userPage);
                     return true;
                 }
                 return false;
@@ -93,21 +100,16 @@ public class MainActivity extends AppCompatActivity /* implements BottomNavigati
         _binding.adminAdd.setOnClickListener(this::adminAdd);
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container_view, new HomePage()).commit();
+                .replace(R.id.fragment_container_view, homePage).commit();
     }
 
     private void adminAdd(View view) {
-        // Сделать переход на активити с 6 полями
-        // {
-        //  Возможно также использовать кропер для картинки
-        //  AlertDialog для выбора куда добавить в out или в announcement
-        // }
+        startActivity(new Intent(this, AdminGameAdd.class));
     }
 
     private void loadFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container_view, fragment)
-                .commit();
+                .replace(R.id.fragment_container_view, fragment).commit();
     }
 
     @Override

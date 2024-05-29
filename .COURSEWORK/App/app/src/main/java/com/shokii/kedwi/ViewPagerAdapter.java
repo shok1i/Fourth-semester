@@ -12,7 +12,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             {"out", "announcement"}};
 
     public ViewPagerAdapter(@NonNull FragmentManager fm) {
-        super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        super(fm);
     }
 
     @Override
