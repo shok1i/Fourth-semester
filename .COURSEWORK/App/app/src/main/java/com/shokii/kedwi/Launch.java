@@ -8,9 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.shokii.kedwi.databinding.ActivityLaunchBinding;
 
-// TODO:
-//   Обновлять возвраст пользователя
-
 
 public class Launch extends AppCompatActivity {
     private ActivityLaunchBinding _binding;

@@ -25,13 +25,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
-
-// Сделать переход на активити с 6 полями
-// {
-//  Возможно также использовать кропер для картинки
-//  AlertDialog для выбора куда добавить в out или в announcement
-// }
-
 public class AdminGameAdd extends AppCompatActivity {
     ActivityAdminGameAddBinding activityAdminGameAddBinding;
     LocalDate currentDate;

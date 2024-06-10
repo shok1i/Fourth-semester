@@ -1,7 +1,6 @@
 package com.shokii.kedwi;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,15 +16,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.shokii.kedwi.databinding.FragmentEnterAccountBinding;
-
-// TODO:
-//  Добавить отработку пустых полей и ошибку ввода
-//  Добавить поднятие интерфейса вверх при открытие клавиатуры
-
-
-// Patterns.EMAIL_ADDRESS.matcher(email).matches()
-// Данный метод проверяет корректность ввода почты
-
 
 
 public class EnterAccount extends Fragment {

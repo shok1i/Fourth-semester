@@ -13,13 +13,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.shokii.kedwi.databinding.FragmentEnterNameBinding;
 
-// TODO:
-//   Переход на новый фрагмент
-//   Добавить отработку пустых полей и ошибку ввода
-//   ? Проверка на существование пользователя с таким именем
-//   ==> Посимвольная проверка
-
-
 
 public class EnterName extends Fragment {
     public EnterName () { super (R.layout.fragment_enter_name); }
